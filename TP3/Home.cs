@@ -20,7 +20,6 @@ namespace TP3
             label1.Text = "Bienvenu "+userName;
         }
 
-        string bob="test";
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

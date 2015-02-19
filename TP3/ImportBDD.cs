@@ -20,7 +20,6 @@ namespace TP3
             this.uid = uid;
             this.pwd = pwd;
         }
-        string secondtest = "commit";
         public MySqlConnection Imported()
         {
             ManagementBDD connec = new ManagementBDD(uid, pwd);
