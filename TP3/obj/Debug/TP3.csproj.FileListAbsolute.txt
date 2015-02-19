@@ -8,3 +8,6 @@ E:\CESI\TP3\TP3\obj\Debug\TP3.exe
 E:\CESI\TP3\TP3\obj\Debug\TP3.pdb
 E:\CESI\TP3\TP3\obj\Debug\TP3.ConnectionPage.resources
 E:\CESI\TP3\TP3\obj\Debug\TP3.Home.resources
+E:\CESI\Git\FilRouge\TP3\bin\Debug\TP3.exe.config
+E:\CESI\Git\FilRouge\TP3\obj\Debug\TP3.exe
+E:\CESI\Git\FilRouge\TP3\obj\Debug\TP3.pdb
