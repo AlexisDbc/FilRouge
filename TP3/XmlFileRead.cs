@@ -16,14 +16,14 @@ namespace TP3
 
         }
 
-        public void read() //string pathFile
+        public string[,] read(string pathFile) 
         {
             int j = 0 ;              //Nb Colonne
-            string fileText = File.ReadAllText(@"E:\CESI\ImportDatat_fournisseur.xml", System.Text.Encoding.UTF8);   //Emplacement du fichier et lecture
+            string fileText = File.ReadAllText(@"E:\CESI\ImportData"+pathFile+".xml", System.Text.Encoding.UTF8);   //Emplacement du fichier et lecture
             XmlDocument unxml = new XmlDocument();                                               
             unxml.LoadXml(fileText);                        //Ouverture du document au format XML
             XmlNode root = unxml.DocumentElement;           //Récupération du noeud principal 
-            List<string> test = new List<string>();         //Liste tempo
+            List<string> tempoTab = new List<string>();         //Liste tempo
 
             XmlNode table = unxml.SelectSingleNode("Table");                
             XmlNodeList lignes = table.SelectNodes("Ligne");
@@ -34,18 +34,19 @@ namespace TP3
                 foreach (XmlNode noeudEnfant in ligne)
                 {
                     j++;
-                    test.Add(noeudEnfant.InnerText);   
+                    tempoTab.Add(noeudEnfant.InnerText);   
                                          
                 }
             }
             string[,] tab = new string[lignes.Count, j];  //Tableau contenant la table
             int tempoI=0; int tempoJ =0;
-            foreach (string s in test)
+            foreach (string s in tempoTab)
             {
                 tab[tempoI, tempoJ] = s;
                 tempoJ++;
                 if (tempoJ == 12) { tempoI++; tempoJ = 0; }
             }
+            return tab;
         }
     }
 }

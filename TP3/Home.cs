@@ -18,16 +18,21 @@ namespace TP3
             InitializeComponent();
             this.userName = userName;
             label1.Text = "Bienvenu "+userName;
-
-            XmlFileRead test = new XmlFileRead();
-            test.read();
+            remplirDataGrid();
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+        public void remplirDataGrid()
+        {
+            XmlFileRead tabFournisseur = new XmlFileRead();
+            string[,] tab = tabFournisseur.read("t_fournisseur");
 
+            
+            
+        }
         
     }
 }

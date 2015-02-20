@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dGVFournisseur = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVFournisseur)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -42,13 +42,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // dataGridView1
+            // dGVFournisseur
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(439, 240);
-            this.dataGridView1.TabIndex = 1;
+            this.dGVFournisseur.AllowUserToAddRows = false;
+            this.dGVFournisseur.AllowUserToDeleteRows = false;
+            this.dGVFournisseur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVFournisseur.Location = new System.Drawing.Point(29, 41);
+            this.dGVFournisseur.Name = "dGVFournisseur";
+            this.dGVFournisseur.ReadOnly = true;
+            this.dGVFournisseur.Size = new System.Drawing.Size(439, 240);
+            this.dGVFournisseur.TabIndex = 1;
             // 
             // Home
             // 
@@ -56,12 +59,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(657, 400);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVFournisseur);
             this.Controls.Add(this.label1);
             this.Name = "Home";
             this.Text = "Home";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVFournisseur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,6 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVFournisseur;
     }
 }
