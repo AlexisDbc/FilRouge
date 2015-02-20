@@ -77,7 +77,16 @@ namespace TP3
             
             
             //Boucle constitution du fichier
-            write = "<Table>" + importType+"\n";
+            write = "<Table>" + importType+"\n\t<Ligne>" + (i-1);
+            file.Write(write);
+            int incNameColumn = 0; string writeNameColumn = "";
+            while (incNameColumn < (limteTabName - 1))          //Ecriture du nom des tables en début de fichier
+            {
+                writeNameColumn = "\n\t\t<Colonne>" + tabNameSplit[incNameColumn] + "\n\t\t</Colonne>";
+                file.Write(writeNameColumn);
+                incNameColumn++;
+            }
+            write = "\n\t</Ligne>\n";
             file.Write(write);
             foreach(string list in resultRequest)
             {
@@ -87,10 +96,10 @@ namespace TP3
                 write = "\t<Ligne>" + i ;
                 string writeColumn="";
                 file.Write(write);
-                while (incColumn<(limteTabName-1))//-1 car le dernier élément du tableau est toujours vide à cause du split
+                while (incColumn < (limteTabName - 1))//-1 car le dernier élément du tableau est toujours vide à cause du split
                 {
                     //Ecriture des données correspondant a une ligne de BDD
-                    writeColumn = "\n\t\t<Colonne>" + tabNameSplit[incColumn]+"\n\t\t\t<Donnée>" +resultRequestSplit[incColumn]+"</Donnée>\n\t\t</Colonne>" ;
+                    writeColumn = "\n\t\t<Colonne>" +/* tabNameSplit[incColumn]+*/"\n\t\t\t<Donnée>" + resultRequestSplit[incColumn] + "</Donnée>\n\t\t</Colonne>";
                     file.Write(writeColumn);
                     incColumn++;
                 }
