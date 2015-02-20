@@ -77,25 +77,29 @@ namespace TP3
             
             
             //Boucle constitution du fichier
+            write = "<Table>" + importType+"\n";
+            file.Write(write);
             foreach(string list in resultRequest)
             {
                 //TO DO indiquer table dans le fichier
                 resultRequestSplit = list.Split(';');
                 int incColumn = 0;
-                write = "<Ligne>" + i ;
+                write = "\t<Ligne>" + i ;
                 string writeColumn="";
                 file.Write(write);
                 while (incColumn<(limteTabName-1))//-1 car le dernier élément du tableau est toujours vide à cause du split
                 {
                     //Ecriture des données correspondant a une ligne de BDD
-                    writeColumn = "\n\t<Colonne>" + tabNameSplit[incColumn]+"\n\t\t<Donnée>" +resultRequestSplit[incColumn]+"</Donnée>\n\t</Colonne>" ;
+                    writeColumn = "\n\t\t<Colonne>" + tabNameSplit[incColumn]+"\n\t\t\t<Donnée>" +resultRequestSplit[incColumn]+"</Donnée>\n\t\t</Colonne>" ;
                     file.Write(writeColumn);
                     incColumn++;
                 }
-                write="\n</Ligne>\n";
+                write="\n\t</Ligne>\n";
                 file.Write(write);
                 i++;//Incrémentation pour le nombre de ligne
             }
+           write = "</Table>";
+           file.Write(write);
            tableName.Clear();
            resultRequest.Clear();
            file.Close();
