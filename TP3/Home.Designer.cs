@@ -46,11 +46,14 @@
             // 
             this.dGVFournisseur.AllowUserToAddRows = false;
             this.dGVFournisseur.AllowUserToDeleteRows = false;
+            this.dGVFournisseur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVFournisseur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVFournisseur.Location = new System.Drawing.Point(29, 41);
+            this.dGVFournisseur.Location = new System.Drawing.Point(12, 41);
             this.dGVFournisseur.Name = "dGVFournisseur";
             this.dGVFournisseur.ReadOnly = true;
-            this.dGVFournisseur.Size = new System.Drawing.Size(439, 240);
+            this.dGVFournisseur.Size = new System.Drawing.Size(627, 160);
             this.dGVFournisseur.TabIndex = 1;
             // 
             // Home
@@ -58,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(657, 400);
+            this.ClientSize = new System.Drawing.Size(651, 404);
             this.Controls.Add(this.dGVFournisseur);
             this.Controls.Add(this.label1);
             this.Name = "Home";

@@ -29,9 +29,21 @@ namespace TP3
         {
             XmlFileRead tabFournisseur = new XmlFileRead();
             string[,] tab = tabFournisseur.read("t_fournisseur");
-
-            
-            
+            int i; int j;
+            dGVFournisseur.ColumnCount = tab.GetLength(1);
+            for (i = 0; i < tab.GetLength(0); i++)
+            {
+                string[] row = new string[tab.GetLength(1)];
+                for (j = 0; j < tab.GetLength(1); j++)
+                {
+                    if (i == 0)
+                    {
+                        dGVFournisseur.Columns[j].Name = tab[i, j];
+                    }
+                    row[j] = tab[i, j];
+                }
+                dGVFournisseur.Rows.Add(row);
+            }
         }
         
     }
